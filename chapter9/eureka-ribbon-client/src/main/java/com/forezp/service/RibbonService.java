@@ -18,6 +18,11 @@ public class RibbonService {
     public String hi(String name) {
         return restTemplate.getForObject("http://eureka-client/hi?name="+name,String.class);
     }
+    
+    @HystrixCommand(fallbackMethod = "hiError")
+    public String getUrl(String name) {
+        return restTemplate.getForObject("http://eureka-client/getUrl?name="+name,String.class);
+    }
 
     public String hiError(String name) {
         return "hi,"+name+",sorry,error!";

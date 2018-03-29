@@ -14,9 +14,29 @@ public class HiController {
 
     @Value("${server.port}")
     String port;
+    
+    
+    @GetMapping("/")
+    public String index(@RequestParam String name) {
+        return "welcome to ek-client  "+port;
+    }
     @GetMapping("/hi")
     public String home(@RequestParam String name) {
         return "hi "+name+",i am from port:" +port;
+    }
+    
+    @GetMapping("/getUrl")
+    public String getUrl(@RequestParam(required=false) String name) {
+        if("baidu".equals(name)) {
+        	return "https://www.baidu.com";
+        }else if("qq".equals(name)) {
+        	return "https://www.qq.com";
+        }else if("163".equals(name)) {
+        	return "https://www.163.com";
+        }
+        
+        
+        return "https://www.baidu.com";
     }
 
 }

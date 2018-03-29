@@ -11,9 +11,9 @@ zuul:
   routes:
     hiapi:
       path: /hiapi/**
-      serviceId: eureka-client
-#      url: http://localhost:8762  #这样写不会做负载均衡
-#      serviceId: hiapi-v1
+      serviceId: host:8762  #这样写不会做负载均衡
+#      serviceId: hiapi-v1eureka-client
+#      url: http://local
     ribbonapi:
       path: /ribbonapi/**
       serviceId: eureka-ribbon-client
