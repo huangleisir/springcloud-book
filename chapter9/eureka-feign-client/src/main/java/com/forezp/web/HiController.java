@@ -11,6 +11,9 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 public class HiController {
+	/**
+	 * http://localhost:8765/hi?name=333
+	 */
     @Autowired
     HiService hiService;
     @GetMapping("/hi")
