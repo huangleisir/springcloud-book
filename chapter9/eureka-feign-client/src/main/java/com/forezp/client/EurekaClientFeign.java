@@ -13,4 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 public interface EurekaClientFeign {
     @GetMapping(value = "/hi")
     String sayHiFromClientEureka(@RequestParam(value = "name") String name);
+    
+    @GetMapping(value = "/getUrl")
+    String getUrl(@RequestParam(value = "name") String name);
 }

@@ -20,6 +20,11 @@ public class HiController {
     public String sayHi(@RequestParam( defaultValue = "forezp",required = false)String name){
         return hiService.sayHi(name);
     }
+    
+    @GetMapping("/getUrl")
+    public String getUrl(@RequestParam( defaultValue = "baidu",required = false)String name){
+        return hiService.sayHi(name);
+    }
 
     @GetMapping("/feignapi/hi")
     public String hiyou(){

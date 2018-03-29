@@ -15,4 +15,8 @@ public class HiService {
     public String sayHi(String name){
         return  eurekaClientFeign.sayHiFromClientEureka(name);
     }
+    
+    public String getUrl(String name){
+        return  eurekaClientFeign.sayHiFromClientEureka(name);
+    }
 }

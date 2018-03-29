@@ -7,7 +7,7 @@ server:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: http://116.85.53.248:8761/eureka/
 
 feign:
   hystrix:
