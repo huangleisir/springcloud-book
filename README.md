@@ -1,3 +1,33 @@
+
+网关的端口port都是整千的.有点意思
+题眼在这里：
+两类请求,  
+http://localhost:5000/userapi/swagger-ui.html
+1. http:127.0.0.1:5000/userapi/registry
+   http:127.0.0.1:5000/userapi/login
+   http:127.0.0.1:5000/userapi/{username}  根据用户名查询用户信息
+http:127.0.0.1:5000/blogapi/swagger-ui.html   
+2. http:127.0.0.1:5000/blogapi/
+http:127.0.0.1:5000/blogapi/blog  发布blog
+http:127.0.0.1:5000/blogapi/blog/{id}/detail  查询blog详情
+http:127.0.0.1:5000/blogapi/blog/{username}   根据用户名查询该用户的所有blog
+ ```
+zuul:
+  host:
+    connect-timeout-millis: 20000
+    socket-timeout-millis: 20000
+
+  routes:
+    user-service:
+      path: /userapi/**
+      serviceId: user-service
+      sensitiveHeaders:
+
+    blog-service:
+      path: /blogapi/**
+      serviceId: blog-service
+      sensitiveHeaders:
+```
 # springcloud-book
 
 

@@ -34,7 +34,7 @@ public class BlogController {
        return RespDTO.onSuc(blog1);
     }
 
-    @ApiOperation(value = "根据用户id获取所有的blog", notes = "根据用户id获取所有的blog")
+    @ApiOperation(value = "根据用户username获取所有的blog", notes = "根据用户username获取所有的blog")
     @PreAuthorize("hasAuthority('ROLE_USER')")
     @GetMapping("/{username}")
     @SysLogger("getBlogs")
