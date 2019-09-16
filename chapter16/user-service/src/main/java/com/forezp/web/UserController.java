@@ -18,13 +18,13 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/user")
 public class UserController {
-
+//  获取token失败
     @Autowired
     UserService userService;
 
     @ApiOperation(value = "注册", notes = "username和password为必选项")
     @PostMapping("/registry")
-    @SysLogger("registry")
+//    @SysLogger("registry")   // 开启rabbit MQ才能用此功能
     public User createUser(@RequestBody User user){
         //参数判读省略,判读该用户在数据库是否已经存在省略
         String entryPassword= BPwdEncoderUtils.BCryptPassword(user.getPassword());
@@ -34,16 +34,16 @@ public class UserController {
 
     @ApiOperation(value = "登录", notes = "username和password为必选项")
     @PostMapping("/login")
-    @SysLogger("login")
+//    @SysLogger("login")
     public RespDTO login(@RequestParam String username , @RequestParam String password){
         //参数判读省略
       return   userService.login(username,password);
     }
 
-    @ApiOperation(value = "根据用户名获取用户", notes = "根据用户名获取用户")
-    @PostMapping("/{username}")
-    @PreAuthorize("hasRole('USER')")
-    @SysLogger("getUserInfo")
+    @ApiOperation(value = "根据用户名获取用户信息", notes = "根据用户名获取用户信息")
+    @PostMapping("info/{username}")
+//    @PreAuthorize("hasRole('USER')")
+//    @SysLogger("getUserInfo")
    // @PreAuthorize("hasAnyAuthority('ROLE_USER')")
     public RespDTO getUserInfo(@PathVariable("username") String username){
         //参数判读省略

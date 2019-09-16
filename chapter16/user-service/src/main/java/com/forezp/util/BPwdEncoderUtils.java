@@ -28,4 +28,11 @@ public class BPwdEncoderUtils {
         return encoder.matches(rawPassword,encodedPassword);
     }
 
+
+
+
+    public static void main(String... args){
+        System.out.println(BPwdEncoderUtils.BCryptPassword("123456"));
+    }
+
 }

@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestHeader;
 @FeignClient(value = "user-service",fallback = UserServiceHystrix.class )
 public interface UserServiceClient {
 
-    @PostMapping(value = "/user/{username}")
+    @PostMapping(value = "/user/info/{username}")
     RespDTO<User> getUser(@RequestHeader(value = "Authorization") String token, @PathVariable("username") String username);
 }
 

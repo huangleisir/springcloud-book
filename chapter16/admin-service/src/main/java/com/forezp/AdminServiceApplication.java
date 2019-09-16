@@ -30,7 +30,7 @@ public class AdminServiceApplication {
 		@Override
 		protected void configure(HttpSecurity http) throws Exception {
 			// Page with login form is served as /login.html and does a POST on /login
-			http.formLogin().loginPage("/login.html").loginProcessingUrl("/login").permitAll();
+			http.formLogin().loginPage("/login.html").loginProcessingUrl("/login").loginProcessingUrl("/register").permitAll();
 			// The UI does a POST on /logout on logout
 			http.logout().logoutUrl("/logout");
 			// The ui currently doesn't support csrf

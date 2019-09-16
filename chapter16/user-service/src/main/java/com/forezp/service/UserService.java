@@ -20,6 +20,7 @@ public class UserService {
 
     @Autowired
     UserDao userDao;
+    @SuppressWarnings("SpringJavaInjectionPointsAutowiringInspection")
     @Autowired
     AuthServiceClient authServiceClient;
 

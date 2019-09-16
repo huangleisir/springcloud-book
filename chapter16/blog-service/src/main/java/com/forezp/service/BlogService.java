@@ -21,6 +21,7 @@ import java.util.Map;
 /**
  * Created by fangzhipeng on 2017/7/10.
  */
+@SuppressWarnings("ALL")
 @Service
 public class BlogService {
 

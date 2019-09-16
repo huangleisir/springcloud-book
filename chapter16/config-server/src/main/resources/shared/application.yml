@@ -26,13 +26,16 @@ eureka:
 #    sensitive: false
 #    enabled: true
 
-
+# 关掉Authority认证 挺烦这玩意
 management:
   security:
     enabled: false
+
 
 feign:
   hystrix:
     enabled: true
 
-
+security:
+  basic:
+    enabled: false
