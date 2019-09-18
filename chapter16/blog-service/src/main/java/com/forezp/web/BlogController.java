@@ -15,7 +15,9 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 /**
- * Created by fangzhipeng on 2017/7/10.
+ *
+ * @author fangzhipeng
+ * @date 2017/7/10
  */
 @RestController
 @RequestMapping("/blog")
@@ -25,9 +27,9 @@ public class BlogController {
     BlogService blogService;
 
     @ApiOperation(value = "发布博客", notes = "发布博客")
-  //  @PreAuthorize("hasRole('USER')")
+/**    @PreAuthorize("hasRole('USER')") */
     @PostMapping("/save")
- //   @SysLogger("postBlog")
+/**    @SysLogger("postBlog") */
     public RespDTO postBlog(@RequestBody Blog blog){
         //字段判读省略
        Blog blog1= blogService.postBlog(blog);
@@ -35,9 +37,9 @@ public class BlogController {
     }
 
     @ApiOperation(value = "根据用户username获取所有的blog", notes = "根据用户username获取所有的blog")
-    @PreAuthorize("hasAuthority('ROLE_USER')")
+/**    @PreAuthorize("hasAuthority('ROLE_USER')") */
     @GetMapping("/{username}")
-    @SysLogger("getBlogs")
+ /**   @SysLogger("getBlogs") */
     public RespDTO getBlogs(@PathVariable String  username){
         //字段判读省略
         if(UserUtils.isMyself(username)) {
@@ -49,9 +51,9 @@ public class BlogController {
     }
 
     @ApiOperation(value = "获取博文的详细信息", notes = "获取博文的详细信息")
-//    @PreAuthorize("hasAuthority('ROLE_USER')")
+/**    @PreAuthorize("hasAuthority('ROLE_USER')") */
     @GetMapping("/{id}/detail")
-//    @SysLogger("getBlogDetail")
+/**   @SysLogger("getBlogDetail") */
     public RespDTO getBlogDetail(@PathVariable Long id){
         return RespDTO.onSuc(blogService.findBlogDetail(id));
     }
