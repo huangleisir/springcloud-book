@@ -7,6 +7,9 @@ import org.springframework.cloud.netflix.feign.EnableFeignClients;
 import org.springframework.cloud.netflix.hystrix.EnableHystrix;
 import org.springframework.cloud.netflix.hystrix.dashboard.EnableHystrixDashboard;
 
+/**
+ * @author DELL
+ */
 @SpringBootApplication
 @EnableEurekaClient
 @EnableFeignClients
