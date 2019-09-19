@@ -12,7 +12,11 @@ import java.util.List;
  */
 
 public interface BlogDao extends JpaRepository<Blog, Long> {
-    /** findByUsername */
+    /**
+     * 根据用户名查找博客文章
+     * @param username
+     * @return
+     */
     List<Blog> findByUsername(String username);
 
 }
