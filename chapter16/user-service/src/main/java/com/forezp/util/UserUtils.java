@@ -7,7 +7,9 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import java.util.List;
 
 /**
- * Created by fangzhipeng on 2017/6/6.
+ *
+ * @author fangzhipeng
+ * @date 2017/6/6
  */
 public class UserUtils {
 
@@ -61,8 +63,9 @@ public class UserUtils {
      * @return
      */
     public static boolean hasRole(String role) {
-        if (!role.startsWith("ROLE_")) {
-            role = "ROLE_" + role;
+        final String ROLE_ = "ROLE_";
+        if (!role.startsWith(ROLE_)) {
+            role = ROLE_ + role;
         }
         boolean hasRole = false;
         List<SimpleGrantedAuthority> list = getCurrentAuthorities();

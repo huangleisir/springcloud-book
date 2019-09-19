@@ -4,9 +4,19 @@ import com.forezp.entity.Blog;
 import com.forezp.entity.User;
 
 /**
- * Created by fangzhipeng on 2017/7/10.
+ *
+ * @author fangzhipeng
+ * @date 2017/7/10
  */
 public class BlogDetailDTO {
+    @Override
+    public String toString() {
+        return "BlogDetailDTO{" +
+                "blog=" + blog +
+                ", user=" + user +
+                '}';
+    }
+
     private Blog blog;
     private User user;
 

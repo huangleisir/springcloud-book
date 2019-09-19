@@ -10,8 +10,11 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 
+/**
+ * @author DELL
+ */
 public class HttpUtils {
-
+    public final String unknown = "unknown";
 
     /**
      * 尝试获取当前请求的HttpServletRequest实例
@@ -49,6 +52,8 @@ public class HttpUtils {
         // 获取请求主机IP地址,如果通过代理进来，则透过防火墙获取真实IP地址
         String ip = request.getHeader("X-Forwarded-For");
 
+
+        String unknown = "unknown";
         if (ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) {
             if (ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) {
                 ip = request.getHeader("Proxy-Client-IP");

@@ -5,10 +5,14 @@ import com.forezp.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
- * Created by fangzhipeng on 2017/5/27.
+ * 读取用户
+ * @return
  */
-
 public interface UserDao extends JpaRepository<User, Long> {
-
+	/**
+	 * 根据用户名查找用户
+	 * @param username
+	 * @return
+	 */
 	User findByUsername(String username);
 }

@@ -3,7 +3,9 @@ package com.forezp.dto;
 import com.forezp.entity.User;
 
 /**
- * Created by fangzhipeng on 2017/7/10.
+ *
+ * @author fangzhipeng
+ * @date 2017/7/10
  */
 public class LoginDTO {
     private User user;
@@ -23,5 +25,13 @@ public class LoginDTO {
 
     public void setToken(String token) {
         this.token = token;
+    }
+
+    @Override
+    public String toString() {
+        return "LoginDTO{" +
+                "user=" + user +
+                ", token='" + token + '\'' +
+                '}';
     }
 }
