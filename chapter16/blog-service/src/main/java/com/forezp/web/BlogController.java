@@ -57,4 +57,5 @@ public class BlogController {
     public RespDTO getBlogDetail(@PathVariable Long id){
         return RespDTO.onSuc(blogService.findBlogDetail(id));
     }
+
 }

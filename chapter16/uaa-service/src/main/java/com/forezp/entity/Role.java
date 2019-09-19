@@ -5,11 +5,14 @@ import org.springframework.security.core.GrantedAuthority;
 import javax.persistence.*;
 
 /**
- * Created by fangzhipeng on 2017/5/27.
+ *
+ * @author fangzhipeng
+ * @date 2017/5/27
  */
 @Entity
 public class Role implements GrantedAuthority {
 
+	private static final long serialVersionUID = 7457970087709121712L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;

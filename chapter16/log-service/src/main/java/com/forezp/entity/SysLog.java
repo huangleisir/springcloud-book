@@ -11,6 +11,9 @@ import java.util.Date;
  */
 @Entity
 public class SysLog implements Serializable {
+
+
+    private static final long serialVersionUID = 1769645390323012310L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

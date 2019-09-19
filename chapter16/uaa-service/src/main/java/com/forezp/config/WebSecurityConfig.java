@@ -1,7 +1,7 @@
 package com.forezp.config;
 
 
-import com.forezp.service.UserServiceDetail;
+import com.forezp.service.UserDetailServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -52,10 +52,10 @@ class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
     @Autowired
-    UserServiceDetail userServiceDetail;
+    UserDetailServiceImpl userDetailServiceImpl;
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.userDetailsService(userServiceDetail)
+        auth.userDetailsService(userDetailServiceImpl)
                 .passwordEncoder(new BCryptPasswordEncoder());
     }
 }

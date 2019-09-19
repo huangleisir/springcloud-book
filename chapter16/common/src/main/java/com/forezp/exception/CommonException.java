@@ -1,8 +1,12 @@
 package com.forezp.exception;
 
 
+/**
+ * @author DELL
+ */
 public class CommonException extends RuntimeException {
 
+    private static final long serialVersionUID = 8395410107054655842L;
     private ErrorCode errorCode;
 
     public CommonException(ErrorCode errorCode) {

@@ -9,10 +9,12 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 /**
- * Created by fangzhipeng on 2017/5/10.
+ *
+ * @author fangzhipeng
+ * @date 2017/5/10
  */
 @Service
-public class UserServiceDetail implements UserDetailsService {
+public class UserDetailServiceImpl implements UserDetailsService {
 
     @Autowired
     private UserDao userRepository;

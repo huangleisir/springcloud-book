@@ -4,11 +4,15 @@ import java.io.Serializable;
 import javax.persistence.*;
 
 /**
- * Created by fangzhipeng on 2017/7/10.
+ *
+ * @author fangzhipeng
+ * @date 2017/7/10
  */
 
 @Entity
 public class Blog implements Serializable {
+
+    private static final long serialVersionUID = 6715200920586182599L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
