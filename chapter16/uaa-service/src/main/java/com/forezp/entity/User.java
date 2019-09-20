@@ -10,7 +10,9 @@ import java.util.List;
 
 
 /**
- * Created by fangzhipeng on 2017/5/27.
+ *
+ * @author fangzhipeng
+ * @date 2017/5/27
  */
 
 @Entity
